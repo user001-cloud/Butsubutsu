@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>高校物理 直前要点・思考プロセス暗記帳</title>
+<style>
+  @page {
+    size: A5 portrait; /* A4の半分サイズ */
+    margin: 8mm 9mm 8mm 9mm;
+  }
+  * {
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  body {
+    font-family: "BIZ UDPGothic", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+    color: #111;
+    background: #fff;
+    margin: 0;
+    line-height: 1.35;
+    font-size: 13px;
+  }
+  .page {
+    page-break-after: always;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .page:last-child {
+    page-break-after: avoid;
+  }
+
+  /* ヘッダー */
+  .header {
+    border-bottom: 2px solid #111;
+    padding-bottom: 3px;
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .header-title {
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  .header-tag {
+    font-size: 11px;
+    font-weight: bold;
+    color: #333;
+    border: 1px solid #333;
+    padding: 1px 5px;
+    border-radius: 3px;
+  }
+
+  /* セクション・ブロック */
+  .card {
+    border: 1.2px solid #222;
+    border-radius: 4px;
+    margin-bottom: 6px;
+    padding: 5px 7px;
+    background: #fff;
+  }
+  .card-title {
+    font-size: 12.5px;
+    font-weight: 800;
+    background: #f0f0f0;
+    padding: 1px 5px;
+    border-left: 4px solid #0b4f8a; /* アクセント青 */
+    margin: -5px -7px 4px -7px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* 手書き風・見やすい分数 */
+  .frac {
+    display: inline-flex;
+    flex-direction: column;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0 2px;
+    font-weight: 700;
+  }
+  .frac > .num {
+    border-bottom: 1.2px solid #111;
+    padding-bottom: 1px;
+  }
+  .frac > .den {
+    padding-top: 1px;
+  }
+
+  /* 重要公式・結果のハイライト */
+  .formula {
+    font-size: 14.5px;
+    font-weight: 800;
+    color: #0b4f8a;
+    letter-spacing: 0.2px;
+  }
+  .res-box {
+    border: 1.2px dashed #0b4f8a;
+    background: #f4f8fc;
+    padding: 3px 6px;
+    border-radius: 3px;
+    margin: 3px 0;
+    font-size: 12px;
+  }
+  .trap {
+    color: #b30000; /* 注意色 赤 */
+    font-weight: 800;
+    font-size: 11.5px;
+  }
+
+  ul {
+    margin: 2px 0 2px 14px;
+    padding: 0;
+  }
+  li {
+    margin-bottom: 2px;
+  }
+  .bold { font-weight: bold; }
+  .small { font-size: 10.5px; color: #444; }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: 力学 ① -->
+<div class="page">
+  <div class="header">
+    <span class="header-title">高校物理［力学①］直前暗記帳</span>
+    <span class="header-tag">A5版折込対応 / P.1</span>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span>等加速度運動・投射</span><span>基準：軸の向きと正負</span></div>
+    <div>
+      <span class="formula">v = v₀ + at</span> ／ 
+      <span class="formula">x = v₀t + <span class="frac"><span class="num">1</span><span class="den">2</span></span>at²</span> ／ 
+      <span class="formula">v² - v₀² = 2ax</span>
+    </div>
+    <ul>
+      <li><span class="trap">【単位注意】</span> $x$[m], $v$[m/s], $a$[m/s²]。速さ $72\text{ km/h} \to 20\text{ m/s}$（$\div 3.6$）</li>
+      <li>投射の思考：水平は等速（$v_x$ 不変）、鉛直は等加速度（重力 $g$）に即座に分解</li>
+    </ul>
+    <div class="res-box">
+      ★<b>落体の必須結果</b>：最高点到達 $t = \frac{v_0}{g}$, 高さ $h = \frac{v_0^2}{2g}$ ／ 自由落下地上速度 $v = \sqrt{2gh}$
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span>運動方程式・摩擦・浮力</span><span>手順：隔離→外力矢印→立式</span></div>
+    <div>
+      <span class="formula">m a = F</span>　静止摩擦 <span class="formula">F ≦ μN</span>　動摩擦 <span class="formula">F' = μ'N</span>
+    </div>
+    <ul>
+      <li><span class="trap">【質量単位】</span> $m$ は必ず <span class="trap">[kg]</span>！(例: $500\text{ g} \to 0.5\text{ kg}$)</li>
+      <li>「すべり出す直前」のみ等号 $F = \mu N$。静止中は単なる力のつりあいで $F$ を求める</li>
+      <li>浮力：<span class="formula">F = ρV g</span>　<span class="trap">【ρ単位】</span> $\rho$ は液体の密度 $[\text{kg/m}^3]$（水なら $1.0\times 10^3\text{ kg/m}^3$）</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span>仕事・力学的エネルギー</span><span>保存 or 外力・非保存力の仕事</span></div>
+    <div>
+      仕事 <span class="formula">W = Fx \cosθ</span>　バネ <span class="formula">U = <span class="frac"><span class="num">1</span><span class="den">2</span></span>kx²</span>　重力 <span class="formula">U = mgh</span>
+    </div>
+    <ul>
+      <li><span class="formula">(初めの力学E) + W(非保存力) = (終わりの力学E)</span></li>
+      <li><span class="trap">【バネの伸び】</span> $x$ は自然長からの伸び/縮み $[\text{m}]$（$\text{cm} \to \times 10^{-2}\text{m}$）</li>
+      <li>摩擦力の仕事：$-F's$（熱として系外に逃げる）</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span>運動量・衝突</span><span>内力のみなら保存／向きの正負厳守</span></div>
+    <div>
+      <span class="formula">m₁v₁ + m₂v₂ = m₁v₁' + m₂v₂'</span>　反発係数 <span class="formula">e = - <span class="frac"><span class="num">v₁' - v₂'</span><span class="den">v₁ - v₂</span></span></span>
+    </div>
+    <ul>
+      <li>衝突・合体・分裂を見たら即座に「運動量保存」</li>
+      <li>壁との衝突：$v' = -e v$（直角成分のみ $e$ 倍、平行成分は変化なし）</li>
+      <li><span class="bold">完全非弾性衝突 ($e=0$)</span>：衝突後一体となって運動（力学的Eは減少最大）</li>
+    </ul>
+    <div class="res-box">
+      ★<b>床バウンド到達高さ</b>：1回で $h_1 = e^2 h$、$n$ 回で $h_n = e^{2n} h$
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2: 力学 ② -->
+<div class="page">
+  <div class="header">
+    <span class="header-title">高校物理［力学②］直前暗記帳</span>
+    <span class="header-tag">A5版折込対応 / P.2</span>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span>円運動・慣性力</span><span>向心加速度 3兄弟</span></div>
+    <div>
+      <span class="formula">v = rω</span> ／ <span class="formula">a = rω² = <span class="frac"><span class="num">v²</span><span class="den">r</span></span></span> ／ 周期 <span class="formula">T = <span class="frac"><span class="num">2π</span><span class="den">ω</span></span> = <span class="frac"><span class="num">2πr</span><span class="den">v</span></span></span>
+    </div>
+    <ul>
+      <li>回転観測系で解くなら：外向きに <span class="formula">m rω² = m <span class="frac"><span class="num">v²</span><span class="den">r</span></span></span> (遠心力) を加えて力のつりあい</li>
+    </ul>
+    <div class="res-box">
+      ★<b>鉛直面内円運動（最下点初速 $v_0$）の暗記結果</b>：<br>
+      ・一回転ループ突破条件：頂点で垂直抗力 $N \ge 0 \implies v_0 \ge \sqrt{5gR}$<br>
+      ・糸がたるまない最高点通過速度：$v_{\text{top}} = \sqrt{gR}$
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span>単振動</span><span>最重要：中心・振幅・角振動数 ω</span></div>
+    <div>
+      復元力 <span class="formula">F = -K(x - x₀)</span> $\implies$ <span class="formula">a = -ω²(x - x₀)</span>　（中心：$x_0$）
+    </div>
+    <div>
+      角振動数 <span class="formula">ω = <span class="small">√</span><span class="frac"><span class="num">K</span><span class="den">m</span></span></span> ／ 周期 <span class="formula">T = 2π <span class="small">√</span><span class="frac"><span class="num">m</span><span class="den">K</span></span></span>
+    </div>
+    <ul>
+      <li>最大速度（中心通過時）：<span class="formula">v_{\max} = Aω</span>　最大加速度（両端）：<span class="formula">a_{\max} = Aω²</span></li>
+      <li>思考手順：①力のつりあい位置（振動中心）を求める $\to$ ②中心から $x$ 変位させ復元力 $F=-Kx$ を作る $\to$ ③ $K$ から $T$ 決定</li>
+    </ul>
+    <div class="res-box">
+      ★<b>暗記すべき周期</b>：<br>
+      ・単振子：$T = 2π\sqrt{l/g}$（質量・振幅によらない：等時性）<br>
+      ・浮きの単振動：$K = \rho S g \implies T = 2\pi\sqrt{m / (\rho S g)}$
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span>万有引力・ケプラー</span><span>地表 $g = GM/R²$ で書き換え</span></div>
+    <div>
+      引力 <span class="formula">F = G <span class="frac"><span class="num">Mm</span><span class="den">r²</span></span></span> ／ 位置E <span class="formula">U = -G <span class="frac"><span class="num">Mm</span><span class="den">r</span></span></span> （無限遠基準：常に負）
+    </div>
+    <div class="res-box">
+      ★<b>暗記すべき宇宙速度</b>（地表 $R$ から）：<br>
+      ・第1宇宙速度（周回軌道）：$v_1 = \sqrt{gR}$（$\approx 7.9\text{ km/s}$）<br>
+      ・第2宇宙速度（脱出速度）：$v_2 = \sqrt{2gR} = \sqrt{2}v_1$（$\approx 11.2\text{ km/s}$）
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 3: 熱力学 -->
+<div class="page">
+  <div class="header">
+    <span class="header-title">高校物理［熱力学］直前暗記帳</span>
+    <span class="header-tag">A5版折込対応 / P.3</span>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span>状態方程式と内部エネルギー</span><span>$P, V, T$ の単位完全統一</span></div>
+    <div>
+      <span class="formula">P V = n R T</span> （$R = 8.31\text{ J/(mol}\cdot\text{K)}$）
+    </div>
+    <ul>
+      <li><span class="trap">【超重要単位】</span> $P$ は $[\text{Pa}]$、$T$ は絶対温度 $[\text{K}] = t[℃] + 273$</li>
+      <li><span class="trap">【体積単位】</span> $V$ は必ず <span class="trap">[m³]</span>！ $1\text{ L} = 10^{-3}\text{ m}^3$ ／ $1\text{ cm}^3 = 10^{-6}\text{ m}^3$</li>
+      <li>内部エネルギー：単原子分子 <span class="formula">U = <span class="frac"><span class="num">3</span><span class="den">2</span></span>nRT</span> （2原子分子は <span class="formula"><span class="frac"><span class="num">5</span><span class="den">2</span></span>nRT</span>）</li>
+      <li>思考：$\Delta U$ は <span class="bold">温度変化 $\Delta T$ だけで決まる</span>（過程によらない）</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span>熱力学第1法則と4大変化</span><span>主語：気体がされたか／したか</span></div>
+    <div>
+      <span class="formula">Q = ΔU + W_{\text{out}}</span>　（気体がした仕事 $W_{\text{out}} = P\Delta V$）
+    </div>
+    <ul>
+      <li><b>定積</b> ($\Delta V=0$)：$W=0 \implies Q = \Delta U = n C_v \Delta T$　（$C_v = \frac{3}{2}R$）</li>
+      <li><b>定圧</b> ($\Delta P=0$)：$W = P\Delta V = nR\Delta T \implies Q = n C_p \Delta T$ （$C_p = C_v + R = \frac{5}{2}R$）</li>
+      <li><b>等温</b> ($\Delta T=0$)：$\Delta U = 0 \implies Q = W$</li>
+      <li><b>断熱</b> ($Q=0$)：$\Delta U = -W_{\text{out}} = W_{\text{in}}$（膨張すると温度低下／ポアソンの式 $PV^\gamma = \text{一定}$）</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span>P-Vグラフと熱効率</span><span>1サイクルで囲まれた面積＝正味の仕事</span></div>
+    <div>
+      熱効率 <span class="formula">e = <span class="frac"><span class="num">W</span><span class="den">Q_{\text{in}}</span></span> = <span class="frac"><span class="num">Q_{\text{in}} - Q_{\text{out}}</span><span class="den">Q_{\text{in}}</span></span> = 1 - <span class="frac"><span class="num">Q_{\text{out}}</span><span class="den">Q_{\text{in}}</span></span></span>
+    </div>
+    <ul>
+      <li>思考：分母の $Q_{\text{in}}$ は「熱を吸収した区間のみ」の合計。$Q_{\text{out}}$ を混ぜない！</li>
+      <li>時計回りサイクル：気体が正の仕事をする（エンジン）。反時計回り：仕事をされる（冷蔵庫）</li>
+    </ul>
+    <div class="res-box">
+      ★<b>気体分子運動論の結果</b>：平均運動エネルギー $\frac{1}{2}m\overline{v^2} = \frac{3}{2}k_B T$（$k_B = R/N_A$）<br>
+      2乗平均速度：$v_{\text{rms}} = \sqrt{\frac{3RT}{M}}$　<span class="trap">※$M$ はモル質量 [kg/mol]！</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 4: 波動 -->
+<div class="page">
+  <div class="header">
+    <span class="header-title">高校物理［波動］直前暗記帳</span>
+    <span class="header-tag">A5版折込対応 / P.4</span>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span>波の基本式・屈折</span><span>何があっても振動数 $f$ は不変！</span></div>
+    <div>
+      <span class="formula">v = f λ</span> ／ 周期 <span class="formula">T = <span class="frac"><span class="num">1</span><span class="den">f</span></span></span> ／ 屈折率 <span class="formula"><span class="frac"><span class="num">\sin i</span><span class="den">\sin r</span></span> = <span class="frac"><span class="num">v₁</span><span class="den">v₂</span></span> = <span class="frac"><span class="num">λ₁</span><span class="den">λ₂</span></span> = <span class="frac"><span class="num">n₂</span><span class="den">n₁</span></span></span>
+    </div>
+    <ul>
+      <li>波が媒質を乗り換えても <span class="bold">振動数 $f$ だけは変わらない</span>（$v$ と $\lambda$ が比例して縮む）</li>
+      <li>屈折率 $n$ の媒質中：波長 $\lambda' = \lambda / n$、光速 $v = c / n$</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span>ドップラー効果</span><span>公式丸暗記＋向きの矢印</span></div>
+    <div>
+      <span class="formula">f' = <span class="frac"><span class="num">V - v_o</span><span class="den">V - v_s</span></span> f</span> （音速 $V$、音源 $v_s$、観測者 $v_o$）
+    </div>
+    <ul>
+      <li>思考：音源から観測者へ向かう向きを「正」とする</li>
+      <li>風速 $w$ があるとき：音速 $V$ を $V \pm w$ に置き換える</li>
+      <li>反射板がある場合：①動く反射板が「受ける音」$\to$ ②反射板が「出す音」の2段階計算</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span>弦・気柱の固有振動</span><span>腹と節の位置関係</span></div>
+    <ul>
+      <li>弦の波の速さ：<span class="formula">v = \sqrt{S/\rho}</span> （張力 $S$, 線密度 $\rho$ [kg/m]）</li>
+      <li>両端固定弦・開管：<span class="formula">f_n = n \cdot <span class="frac"><span class="num">v</span><span class="den">2L</span></span></span>　（$n=1,2,3,\dots$）</li>
+      <li>片側閉管：<span class="formula">f_m = (2m - 1) \cdot <span class="frac"><span class="num">v</span><span class="den">4L</span></span></span>　（奇数倍のみ存在！）</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span>光の干渉・薄膜</span><span>反射時の位相ズレ：疎$\to$密（小$\to$大）で $\pi$ 変化</span></div>
+    <div class="res-box">
+      ★<b>光路差（屈折率 $n$ の中を距離 $d$ 進むと光路長は $nd$）</b><br>
+      ・ヤングの実験：明線条件 $\frac{dx}{l} = m\lambda \implies$ 明線間隔 <span class="formula">Δx = <span class="frac"><span class="num">lλ</span><span class="den">d</span></span></span><br>
+      ・薄膜干渉：垂直入射 光路差 <span class="formula">2nd</span>（固定端反射が1回なら強め合い条件は半波長ズレて $(m + 1/2)\lambda$）
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 5: 電磁気 ① -->
+<div class="page">
+  <div class="header">
+    <span class="header-title">高校物理［電磁気①］直前暗記帳</span>
+    <span class="header-tag">A5版折込対応 / P.5</span>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span>電場・電位・ガウスの法則</span><span>力 $F$ と電場 $E$、位置E $U$ と電位 $V$</span></div>
+    <div>
+      力 <span class="formula">F = qE</span> ／ 位置E <span class="formula">U = qV</span> ／ 一様電場 <span class="formula">V = Ed</span>
+    </div>
+    <ul>
+      <li>点電荷：<span class="formula">E = k <span class="frac"><span class="num">Q</span><span class="den">r²</span></span></span>　電位 <span class="formula">V = k <span class="frac"><span class="num">Q</span><span class="den">r</span></span></span> （分母が $r^2$ か $r$ か混同厳禁）</li>
+      <li><span class="trap">【電荷の正負】</span> $U=qV$ には符号ごと代入（負電荷は電位が高いほど位置Eが低い）</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span>コンデンサー回路</span><span>3大公式＋孤立部分の電荷保存</span></div>
+    <div>
+      <span class="formula">Q = C V</span> ／ 容量 <span class="formula">C = ε <span class="frac"><span class="num">S</span><span class="den">d</span></span></span> ／ 静電E <span class="formula">U = <span class="frac"><span class="num">1</span><span class="den">2</span></span>QV = <span class="frac"><span class="num">1</span><span class="den">2</span></span>CV² = <span class="frac"><span class="num">Q²</span><span class="den">2C</span></span></span>
+    </div>
+    <ul>
+      <li><span class="trap">【単位変換】</span> $\mu\text{F} \to 10^{-6}\text{F}$、$\text{pF} \to 10^{-12}\text{F}$、極板間隔 $d$ は $[\text{m}]$</li>
+      <li>誘電体（比誘電率 $\varepsilon_r$）挿入：$C \to \varepsilon_r C$ に増加</li>
+      <li>思考：<b>スイッチ接続中 $\implies V$ 一定</b> ／ <b>スイッチ切断後 $\implies Q$ 一定</b></li>
+      <li>極板間引力：<span class="formula">F = <span class="frac"><span class="num">1</span><span class="den">2</span></span> q E = <span class="frac"><span class="num">1</span><span class="den">2</span></span> <span class="frac"><span class="num">Q²</span><span class="den">εS</span></span></span> （全体電場 $E$ の半分が自作電場）</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span>直流回路・キルヒホッフ</span><span>電位の高低を意識して一周＝0</span></div>
+    <ul>
+      <li>抵抗率：<span class="formula">R = ρ <span class="frac"><span class="num">l</span><span class="den">S</span></span></span> （長さ $l[\text{m}]$ に比例、断面積 $S[\text{m}^2]$ に反比例）</li>
+      <li>消費電力：<span class="formula">P = IV = I²R = <span class="frac"><span class="num">V²</span><span class="den">R</span></span></span>　熱量 $J = Pt = IVt$ [J]</li>
+      <li><b>非オーム抵抗（電球）の解法</b>：$E - RI = V$（直線の式）をグラフに引き交点を読む</li>
+    </ul>
+  </div>
+</div>
+
+<!-- PAGE 6: 電磁気 ② ＆ 原子 -->
+<div class="page">
+  <div class="header">
+    <span class="header-title">高校物理［電磁気②・原子］直前暗記帳</span>
+    <span class="header-tag">A5版折込対応 / P.6</span>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span>磁場・電磁力・電磁誘導</span><span>右手・左手の向き判定完全固定</span></div>
+    <div>
+      電磁力 <span class="formula">F = I B l</span> ／ ローレンツ力 <span class="formula">f = q v B</span> ／ 誘導起電力 <span class="formula">V = v B l</span>
+    </div>
+    <ul>
+      <li>法則：<span class="formula">V = -N \cdot <span class="frac"><span class="num">ΔΦ</span><span class="den">Δt</span></span></span>　（磁束 $\Phi = BS$、変化を嫌う向きに流れる）</li>
+      <li>磁場中の荷電粒子の円運動：$m\frac{v^2}{r} = qvB \implies$ 半径 <span class="formula">r = <span class="frac"><span class="num">mv</span><span class="den">qB</span></span></span>、周期 <span class="formula">T = <span class="frac"><span class="num">2πm</span><span class="den">qB</span></span></span></li>
+      <li>自己誘導：<span class="formula">V = -L \frac{ΔI}{Δt}</span> ／ コイルのE：<span class="formula">U = <span class="frac"><span class="num">1</span><span class="den">2</span></span> L I²</span></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span>交流・リアクタンス</span><span>位相のズレ：コンデンサー遅れ、コイル進み</span></div>
+    <div>
+      実効値 <span class="formula">V_e = <span class="frac"><span class="num">V₀</span><span class="den">√2</span></span></span>　コイル <span class="formula">X_L = ωL</span>　コンデンサー <span class="formula">X_C = <span class="frac"><span class="num">1</span><span class="den">ωC</span></span></span>
+    </div>
+    <div class="res-box">
+      ★<b>RLC直列共振周波数</b>：$X_L = X_C \implies \omega L = \frac{1}{\omega C} \implies$ <span class="formula">f_0 = <span class="frac"><span class="num">1</span><span class="den">2π√LC</span></span></span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span>原子物理の必須公式</span><span>光子E・物質波・質量欠損</span></div>
+    <ul>
+      <li>光子エネルギー：<span class="formula">E = hf = <span class="frac"><span class="num">hc</span><span class="den">λ</span></span></span>　運動量 <span class="formula">p = <span class="frac"><span class="num">h</span><span class="den">λ</span></span></span></li>
+      <li>光電効果：<span class="formula">hf = W + K_{\max}</span>（$W$ は仕事関数、$K_{\max} = eV_0$ 阻止電圧）</li>
+      <li>ド・ブロイ波長：<span class="formula">\lambda = <span class="frac"><span class="num">h</span><span class="den">p</span></span> = <span class="frac"><span class="num">h</span><span class="den">mv</span></span></span></li>
+      <li>ボーアの量子条件：<span class="formula">2πr = nλ = n <span class="frac"><span class="num">h</span><span class="den">mv</span></span></span>　（エネルギー準位 $E_n = -\frac{13.6}{n^2}\text{ eV}$）</li>
+      <li>放射壊変：<span class="formula">N = N₀ \left(<span class="frac"><span class="num">1</span><span class="den">2</span></span>\right)^{\frac{t}{T}}</span> （$T$ は半減期）</li>
+      <li>質量欠損：<span class="formula">ΔE = Δm \cdot c²</span>　<span class="trap">【単位注意】$\Delta m$ は必ず [kg] に直す！</span></li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>
